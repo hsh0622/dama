@@ -125,23 +125,6 @@ export const Timeline: React.FC = () => {
     }
   };
 
-  // Get Type Icon helper
-  const getTypeIcon = (type: MemoryType) => {
-    switch (type) {
-      case "photo":
-        return { icon: Image, color: "text-apple-blue bg-apple-blue/10" };
-      case "video":
-        return { icon: Video, color: "text-brand-primary bg-brand-light" };
-      case "audio":
-        return { icon: Mic, color: "text-apple-green bg-apple-green/10" };
-      case "memo":
-        return {
-          icon: FileText,
-          color: "text-brand-accent bg-brand-accent/10",
-        };
-    }
-  };
-
   return (
     <div className="space-y-8 animate-float-up max-w-4xl mx-auto">
       {/* Page Title */}
