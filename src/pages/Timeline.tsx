@@ -214,7 +214,6 @@ export const Timeline: React.FC = () => {
           <div className="absolute left-[29px] md:left-24 top-2 bottom-2 w-0.5 timeline-line z-0" />
 
           {filteredSortedMemories.map((item) => {
-            const { icon: TypeIcon, color: iconColor } = getTypeIcon(item.type);
             const dateObj = new Date(item.date);
             const displayYear = dateObj.getFullYear();
             const displayMonthDay = `${dateObj.getMonth() + 1}/${dateObj.getDate()}`;
