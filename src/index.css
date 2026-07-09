@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Warm Premium Theme Colors */
+  --color-apple-blue: #e05a2b;         /* Clay Orange - Cozy family-heritage shade */
+  --color-apple-blue-light: #f07345;   /* Warm Amber Orange - Active accents */
+  --color-apple-gray-50: #FAF6F0;     /* Cream Ivory Base - Warm ambient card fill */
+  --color-apple-gray-100: #EBE4DC;    /* Soft Warm Beige - Cozy borders */
+  --color-apple-gray-200: #DDD5CC;    /* Mid Warm Sepia */
+  --color-apple-gray-300: #8C8075;    /* Sepia Gray - Delicate subtexts */
+  --color-apple-gray-800: #2B2521;    /* Espresso Dark - Grounded readable body */
+  --color-apple-green: #d97706;       /* Warm Forest Amber - Success status indicators */
+  
+  /* Modern soft premium colors */
+  --color-brand-primary: #8C6239;     /* Vintage Wood Brown */
+  --color-brand-light: #F5EFEB;       /* Soft Sand beige */
+  --color-brand-accent: #f97316;      /* Bright Warm Sun Orange */
+
+  /* Typography */
+  --font-serif: "Noto Serif KR", Georgia, serif;
+  --font-sans: "Outfit", "Inter", "SF Pro KR", sans-serif;
+
+  /* Shadows */
+  --shadow-apple-card: 0 4px 30px rgba(43, 37, 33, 0.02);
+  --shadow-apple-card-hover: 0 10px 40px rgba(43, 37, 33, 0.05);
+  --shadow-glass: 0 8px 32px 0 rgba(140, 98, 57, 0.02);
+}
+
+/* Custom Utilities & Global Styles */
+@layer base {
+  body {
+    background-color: #FAF6F0;       /* Ivory Cream background */
+    color: #2B2521;                  /* Espresso dark text */
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(140, 98, 57, 0.02);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 98, 57, 0.15);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 98, 57, 0.25);
+}
+
+/* Custom Glassmorphism Utility */
+.glass-effect {
+  background: rgba(250, 246, 240, 0.75); /* Cream base overlay */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(235, 228, 220, 0.5);
+}
+
+.glass-effect-dark {
+  background: rgba(43, 37, 33, 0.85);   /* Cozy dark cocoa bean base */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Timeline Custom line gradient */
+.timeline-line {
+  background: linear-gradient(180deg, rgba(224, 90, 43, 0) 0%, rgba(224, 90, 43, 0.5) 15%, rgba(249, 115, 22, 0.5) 85%, rgba(249, 115, 22, 0) 100%);
+}
+
+/* Animations */
+@keyframes floatUp {
+  0% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-float-up {
+  animation: floatUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .6;
+  }
+}
